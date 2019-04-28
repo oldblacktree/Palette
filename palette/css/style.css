@@ -99,6 +99,11 @@ body {
   position: absolute;
 }
 
+.-transform {
+  border-radius: 50%;
+}
+
+
 #figure-1 {
   top: 2.5%;
   left: 2.5%;
