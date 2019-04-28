@@ -14,15 +14,18 @@ let orderIntoItem = '';
 
 Array.from(document.querySelectorAll('.palette__item')).forEach((item) => {
   item.addEventListener('dragenter', function(e) {
+    e.target.style.opacity = 0.5;
   })
   item.addEventListener('dragover', function (e) {
     e.preventDefault();
   })
   item.addEventListener('dragleave', function (e) {
+    e.target.style.opacity = 1;
   })
   item.addEventListener('drop', function (e) {
     orderIntoItem = getComputedStyle(e.target).order;
     e.target.style.order = orderMoveItem;
+    e.target.style.opacity = 1;
   })
 })
 
