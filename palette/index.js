@@ -42,6 +42,7 @@ moveEl.addEventListener('click', e => {
   styleTool(e);
 
   Array.from(document.querySelectorAll('.palette__item')).forEach((item) => {
+    item.setAttribute('draggable', 'true');
     item.addEventListener('dragenter', dragenterFigure);
     item.addEventListener('dragover', dragoverFigure);
     item.addEventListener('dragleave', dragleaveFigure);
@@ -91,6 +92,7 @@ function removeEvLis() {
     transformEl.style.border = 'none'
   } else if (choosenTool === moveEl) {
     Array.from(document.querySelectorAll('.palette__item')).forEach((item) => {
+      item.removeAttribute('draggable');
       item.removeEventListener('dragenter', dragenterFigure);
       item.removeEventListener('dragover', dragoverFigure);
       item.removeEventListener('dragleave', dragleaveFigure);
