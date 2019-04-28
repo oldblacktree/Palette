@@ -10,15 +10,20 @@ let currentColor = 'green';
 let prevColor = '';
 
 
-
-
-
-document.addEventListener('click', paint);
-function paint(e){
-  if (e.target.classList.contains('palette__item')){
-   e.target.style.backgroundColor = currentColor;
+document.addEventListener('click', transform);
+function transform(e) {
+  if (e.target.classList.contains('palette__item')) {
+    e.target.classList.toggle('-transform');
   }
 }
+
+
+// document.addEventListener('click', paint);
+// function paint(e){
+//   if (e.target.classList.contains('palette__item')){
+//    e.target.style.backgroundColor = currentColor;
+//   }
+// }
 
 
 
