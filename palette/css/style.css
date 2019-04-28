@@ -24,7 +24,7 @@ body {
 .colors {
   display: flex;
   flex-direction: column;
-  width: 210px;
+  width: 250px;
   border: 5px solid rgb(185, 185, 185);
   border-radius: 15px;
 }

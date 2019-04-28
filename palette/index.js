@@ -13,8 +13,6 @@ let orderIntoItem = '';
 let choosenTool = '';
 
 
-
-
 paintBucketEl.addEventListener('click', e => {
   removeEvLis();
   choosenTool = paintBucketEl;
@@ -52,7 +50,42 @@ moveEl.addEventListener('click', e => {
   document.addEventListener('dragend', moveEnd);
 })
 
-
+document.addEventListener('keydown', e => {
+  switch (e.keyCode) {
+    case 80:
+      removeEvLis();
+      choosenTool = paintBucketEl;
+      document.addEventListener('click', paint);
+      paintBucketEl.style.cssText = 'border: 3px solid green'
+      break;
+    case 67:
+      removeEvLis();
+      choosenTool = colorPickerEl;
+      document.addEventListener('click', chooseColor);
+      colorPickerEl.style.cssText = 'border: 3px solid green'
+      break;
+    case 77:
+      removeEvLis();
+      choosenTool = moveEl;
+      Array.from(document.querySelectorAll('.palette__item')).forEach((item) => {
+        item.setAttribute('draggable', 'true');
+        item.addEventListener('dragenter', dragenterFigure);
+        item.addEventListener('dragover', dragoverFigure);
+        item.addEventListener('dragleave', dragleaveFigure);
+        item.addEventListener('drop', dropFigure);
+      })
+      document.addEventListener('dragstart', moveStart);
+      document.addEventListener('dragend', moveEnd);
+      moveEl.style.cssText = 'border: 3px solid green'
+      break;
+    case 84:
+      removeEvLis();
+      choosenTool = transformEl;
+      document.addEventListener('click', transform);
+      transformEl.style.cssText = 'border: 3px solid green'
+      break;
+  }
+})
 
 
 
