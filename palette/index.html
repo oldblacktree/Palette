@@ -31,7 +31,7 @@
     <div class="main__column">
     <div class="tools">
       <div class="tools__item">
-        <div class="tools__icon tools__icon--pick ">   
+        <button id="paint-bucket" class="tools__icon">   
           <svg width="24" height="24" viewBox="0 0 24 24">
           <path d="M19.7782 14.25C19.7782 14.25 17.556 17.5072 17.556 18.75C17.556 19.9928 18.5511 21 19.7782 21C21.0053 
           21 22.0004 19.9928 22.0004 18.75C22.0004 17.5072 19.7782 14.25 19.7782 14.25ZM19.4528 10.631L12.2414 
@@ -43,12 +43,12 @@
           9.37875L9.87262 11.4389C10.3063 11.878 11.0098 11.878 11.4435 11.4389C11.8771 10.9998 11.8771 10.2875 11.4435
           9.84844L9.40874 7.78828L11.4556 5.71582L17.0959 11.4266L15.4174 13.1261Z" fill="black" fill-opacity="0.5413" />
           </svg>
-        </div>
+        </button>
         <p class="tools__name">Paint bucket</p>
       </div>
 
       <div class="tools__item">
-        <div class="tools__icon">  
+        <button id="color-picker" class="tools__icon">  
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
           <path d="M1.98242 13.0176C1.51367 13.4863 1.25 14.1223 1.25 14.7856V16.5625L0 18.75L1.25 20L3.4375 
           18.75H5.21445C5.87734 18.75 6.51328 18.4867 6.98203 18.018L11.9289 13.0719L6.92891 8.07189L1.98242 
@@ -58,12 +58,12 @@
           16.7676 10.2902 16.4016 9.92423L15.8898 9.41251L18.9012 6.40118C20.3664 4.93712 20.3664 2.5629 18.9016 
           1.09845Z" fill="black" fill-opacity="0.5413"/>
         </svg>
-        </div>
+        </button>
         <p class="tools__name">Choose color</p>
       </div>
 
       <div class="tools__item">
-        <div class="tools__icon">  
+        <button id="move" class="tools__icon">  
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
           <path
           d="M13.7571 16.6311L10.6636 19.7247C10.2974 20.0909 9.70387 20.0909 9.33773 19.7247L6.24414 16.6311C5.65355 
@@ -76,12 +76,12 @@
              13.7571C16.0405 14.3477 15.0306 13.9294 15.0307 13.0942V11.093H11.093V15.0307H13.0942C13.9295 15.0307
               14.3477 16.0405 13.7571 16.6311Z" fill="black" fill-opacity="0.5413" />
         </svg>
-        </div>
+        </button>
         <p class="tools__name">Move</p>
       </div>
 
       <div class="tools__item">
-        <div class="tools__icon">
+        <button id="transform" class="tools__icon">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
             <path
               d="M0 6.56249V5.93749C0 5.41972 0.419727 4.99999 0.9375 4.99999H15V3.12499C15 2.29034 16.0117 1.87335 
@@ -91,18 +91,18 @@
               14.4129L3.39957 17.5379C3.9866 18.1249 5 17.7124 5 16.875V15H19.0625C19.5803 15 20 14.5803 20 
               14.0625V13.4375C20 12.9197 19.5803 12.5 19.0625 12.5Z" fill="black" fill-opacity="0.5413" />
           </svg>
-        </div>
+        </button>
         <p class="tools__name">Transform</p>
       </div>
     </div>
 
     <div class="colors">
       <div class="colors__item">
-        <div class="colors__sample  colors__sample--current"></div>
+        <div id="current-color"class="colors__sample"></div>
         <div class="colors__name">Current color</div>
       </div>
       <div class="colors__item" >
-        <div class="colors__sample  colors__sample--prev"></div>
+        <div id="prev-color" class="colors__sample"></div>
         <div class="colors__name">Prev color</div>
       </div>
       <div class="colors__item">

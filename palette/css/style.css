@@ -47,6 +47,8 @@ body {
   height: 35px;
   border-radius: 50%;
   cursor: pointer;
+  background: none;
+  border: none;
 }
 .tools__icon:hover {
   background-color: #ddd;
@@ -64,6 +66,7 @@ body {
     width: 25px;
     height: 25px;
     border-radius: 50%;
+    border: 2px solid #ccc;
 }
 .colors__sample--red {
   background-color: red;
@@ -71,12 +74,7 @@ body {
 .colors__sample--blue {
   background-color: blue;
 }
-.colors__sample--prev {
-  background-color: green;
-}
-.colors__sample--current {
-  background-color: #ccc;;
-}
+
 .main {
   display: flex;
   justify-content: space-between;
