@@ -88,15 +88,18 @@ body {
 .palette {
   width: 700px;
   height: 700px;
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  flex-wrap: wrap;
   border: 2px solid #ddd;
   border-radius: 15px;
-  position: relative;
+  padding: 20px;
 }
 .palette__item {
   width: 30%;
   height: 30%;
   background-color: rgb(115, 231, 235);
-  position: absolute;
 }
 
 .-transform {
@@ -105,38 +108,29 @@ body {
 
 
 #figure-1 {
-  top: 2.5%;
-  left: 2.5%;
+
 }
 #figure-2 {
-  top: 2.5%;
-  left: 35%;
+
 }
 #figure-3 {
-  top: 2.5%;
-  left: 67.5%;
+
 }
 #figure-4 {
-  top: 35%;
-  left: 2.5%;
+
 }
 #figure-5 {
-  top: 35%;
-  left: 35%;
+
 }
 #figure-6 {
-  top: 35%;
-  left: 67.5%;
+
 }
 #figure-7 {
-  top: 67.5%;
-  left: 2.5%;
+
 }
 #figure-8 {
-  top: 67.5%;
-  left: 35%;
+
 }
 #figure-9 {
-  top: 67.5%;
-  left: 67.5%;
+ 
 }

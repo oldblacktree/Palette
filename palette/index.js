@@ -9,13 +9,21 @@ const transformEl = document.getElementById('transform');
 let currentColor = 'green';
 let prevColor = '';
 
+// document.addEventListener('dragstart', move);
+// function move(e){
+//   e.target.style.opacity = 0.3; 
+// }
+// document.addEventListener('dragend', move1);
+// function move1(e) {
+//   e.target.style.opacity = 1;
+// }
 
-document.addEventListener('click', transform);
-function transform(e) {
-  if (e.target.classList.contains('palette__item')) {
-    e.target.classList.toggle('-transform');
-  }
-}
+// document.addEventListener('click', transform);
+// function transform(e) {
+//   if (e.target.classList.contains('palette__item')) {
+//     e.target.classList.toggle('-transform');
+//   }
+// }
 
 
 // document.addEventListener('click', paint);
