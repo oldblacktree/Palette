@@ -108,29 +108,31 @@ body {
 
 
 #figure-1 {
-
+  order: 1;
 }
 #figure-2 {
-
+  order: 2;
+  background-color: green;
 }
 #figure-3 {
-
+  order: 3;
+  background-color: red;
 }
 #figure-4 {
-
+  order: 4;
 }
 #figure-5 {
-
+  order: 5;
 }
 #figure-6 {
-
+  order: 6;
 }
 #figure-7 {
-
+  order: 7;
 }
 #figure-8 {
-
+  order: 8;
 }
 #figure-9 {
- 
+ order: 9;
 }

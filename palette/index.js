@@ -8,15 +8,34 @@ const transformEl = document.getElementById('transform');
 
 let currentColor = 'green';
 let prevColor = '';
+let orderMoveItem = '';
+let orderIntoItem = '';
 
-// document.addEventListener('dragstart', move);
-// function move(e){
-//   e.target.style.opacity = 0.3; 
-// }
-// document.addEventListener('dragend', move1);
-// function move1(e) {
-//   e.target.style.opacity = 1;
-// }
+
+Array.from(document.querySelectorAll('.palette__item')).forEach((item) => {
+  item.addEventListener('dragenter', function(e) {
+  })
+  item.addEventListener('dragover', function (e) {
+    e.preventDefault();
+  })
+  item.addEventListener('dragleave', function (e) {
+  })
+  item.addEventListener('drop', function (e) {
+    orderIntoItem = getComputedStyle(e.target).order;
+    e.target.style.order = orderMoveItem;
+  })
+})
+
+document.addEventListener('dragstart', moveStart);
+function moveStart(e){
+  orderMoveItem = getComputedStyle(e.target).order;
+}
+document.addEventListener('dragend', moveEnd);
+function moveEnd(e) {
+  e.target.style.order = orderIntoItem;
+}
+
+
 
 // document.addEventListener('click', transform);
 // function transform(e) {
@@ -26,12 +45,15 @@ let prevColor = '';
 // }
 
 
+
+
 // document.addEventListener('click', paint);
 // function paint(e){
 //   if (e.target.classList.contains('palette__item')){
 //    e.target.style.backgroundColor = currentColor;
 //   }
 // }
+
 
 
 
