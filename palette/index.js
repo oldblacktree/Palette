@@ -1,5 +1,75 @@
-document.getElementById('prev-color').style.backgroundColor = 'green';
-document.getElementById('current-color').style.backgroundColor = '#ccc';
+
+window.onload = () => {
+  if (localStorage.state) {
+    let state = JSON.parse(localStorage.getItem('state'))
+    currentColor = state.currentColor;
+    prevColor = state.prevColor;
+    document.getElementById('prev-color').style.backgroundColor = prevColor;
+    document.getElementById('current-color').style.backgroundColor = currentColor;
+    
+    // tools
+    switch (state.choosenTool) {
+      case 'paint-bucket':
+        choosenTool = paintBucketEl;
+        document.addEventListener('click', paint);
+        paintBucketEl.style.cssText = 'border: 3px solid green'
+        break;
+      case 'color-picker':
+        choosenTool = colorPickerEl;
+        document.addEventListener('click', chooseColor);
+        colorPickerEl.style.cssText = 'border: 3px solid green'
+        break;
+      case 'move':
+        choosenTool = moveEl;
+        Array.from(document.querySelectorAll('.palette__item')).forEach((item) => {
+          item.setAttribute('draggable', 'true');
+          item.addEventListener('dragenter', dragenterFigure);
+          item.addEventListener('dragover', dragoverFigure);
+          item.addEventListener('dragleave', dragleaveFigure);
+          item.addEventListener('drop', dropFigure);
+        })
+        document.addEventListener('dragstart', moveStart);
+        document.addEventListener('dragend', moveEnd);
+        moveEl.style.cssText = 'border: 3px solid green'
+        break;
+      case 'transform':
+        choosenTool = transformEl;
+        document.addEventListener('click', transform);
+        transformEl.style.cssText = 'border: 3px solid green'
+        break;
+    }
+    // figure 
+    for (let i = 1; i <= 9; i++){
+      document.getElementById('figure-' + i).style.backgroundColor = state['figure' + i].color;
+      if (state['figure' + i].transform){
+        document.getElementById('figure-' + i).classList.add('-transform');
+      }
+      document.getElementById('figure-' + i).style.order = state['figure' + i].order;
+    }
+
+    }
+  }
+
+
+window.addEventListener('click', () => {
+  setTimeout(() => {
+    let state = {
+      'choosenTool': choosenTool.id,
+      'currentColor': currentColor,
+      'prevColor': prevColor
+    }
+    for (let i = 1; i <= 9; i++){
+      state['figure' + i] = {
+        'color': getComputedStyle(document.getElementById('figure-' + i)).backgroundColor,
+        'transform': document.getElementById('figure-' + i).classList.contains('-transform'),
+        'order': getComputedStyle(document.getElementById('figure-' + i)).order
+      }
+    }
+
+    localStorage.setItem('state', JSON.stringify(state));
+  }, 4);
+})
+
 
 const paintBucketEl = document.getElementById('paint-bucket');
 const colorPickerEl = document.getElementById('color-picker');
@@ -7,11 +77,14 @@ const moveEl = document.getElementById('move');
 const transformEl = document.getElementById('transform');
 
 let currentColor = '#ccc';
-let prevColor = '';
-let orderMoveItem = '';
-let orderIntoItem = '';
-let choosenTool = '';
+let prevColor = 'green';
+let orderMoveItem ;
+let orderIntoItem ;
+let choosenTool = {};
 
+
+document.getElementById('prev-color').style.backgroundColor = prevColor;
+document.getElementById('current-color').style.backgroundColor = currentColor;
 
 paintBucketEl.addEventListener('click', e => {
   removeEvLis();
@@ -88,7 +161,6 @@ document.addEventListener('keydown', e => {
 })
 
 
-
 function dragenterFigure(e) {
   e.target.style.opacity = 0.5;
 }
@@ -144,12 +216,13 @@ function paint(e){
 }
 
 function chooseColor(e){
-  prevColor= currentColor;
-  currentColor = getComputedStyle(e.target).backgroundColor;
-  if (currentColor !== prevColor ) {
+  if (currentColor !== getComputedStyle(e.target).backgroundColor) {
+    prevColor= currentColor;
+    currentColor = getComputedStyle(e.target).backgroundColor;
     document.getElementById('prev-color').style.backgroundColor = prevColor;
+    document.getElementById('current-color').style.backgroundColor = currentColor;
   }
-  document.getElementById('current-color').style.backgroundColor = currentColor;
+ 
 }
 
 function transform(e) {
@@ -161,9 +234,6 @@ function transform(e) {
 function styleTool(e){
   e.currentTarget.style.cssText = 'border: 3px solid green'
 }
-
-
-
 
 
 
