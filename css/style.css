@@ -1,0 +1,135 @@
+body {
+  padding: 35px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.header {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: rgb(185, 185, 185);
+  border-radius: 15px;
+  font-size: 0;
+}
+.title {
+  margin-left: 20px;
+  flex-grow: 1;
+}
+
+.title {
+  font-size: 36px;
+}
+
+.tools,
+.colors {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  border: 5px solid rgb(185, 185, 185);
+  border-radius: 15px;
+}
+.tools__item,
+.colors__item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 0;
+}
+.colors__item:nth-of-type(2),
+.tools__item:nth-of-type(2) {
+  border-bottom: 3px solid #ddd;
+}
+.tools__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+.tools__icon:hover {
+  background-color: #ddd;
+}
+.tools__icon--pick {
+  border: 3px solid green;
+}
+.tools__name,
+.colors__name {
+  font-size: 22px;
+  margin-left: 20px;
+}
+
+.colors__sample {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+}
+.colors__sample--red {
+  background-color: red;
+}
+.colors__sample--blue {
+  background-color: blue;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+}
+.main__column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.palette {
+  width: 700px;
+  height: 700px;
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  flex-wrap: wrap;
+  border: 2px solid #ddd;
+  border-radius: 15px;
+  padding: 20px;
+}
+.palette__item {
+  width: 30%;
+  height: 30%;
+  background-color: rgb(115, 231, 235);
+}
+
+.-transform {
+  border-radius: 50%;
+}
+
+#figure-1 {
+  order: 1;
+}
+#figure-2 {
+  order: 2;
+}
+#figure-3 {
+  order: 3;
+}
+#figure-4 {
+  order: 4;
+}
+#figure-5 {
+  order: 5;
+}
+#figure-6 {
+  order: 6;
+}
+#figure-7 {
+  order: 7;
+}
+#figure-8 {
+  order: 8;
+}
+#figure-9 {
+  order: 9;
+}
