@@ -3,11 +3,11 @@ body {
   max-width: 1400px;
   margin: 0 auto;
 }
-.header { 
+.header {
   display: flex;
   align-items: center;
   padding: 15px;
-  background-color:rgb(185, 185, 185);
+  background-color: rgb(185, 185, 185);
   border-radius: 15px;
   font-size: 0;
 }
@@ -63,10 +63,10 @@ body {
 }
 
 .colors__sample {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    border: 2px solid #ccc;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
 }
 .colors__sample--red {
   background-color: red;
@@ -106,17 +106,14 @@ body {
   border-radius: 50%;
 }
 
-
 #figure-1 {
   order: 1;
 }
 #figure-2 {
   order: 2;
-  background-color: green;
 }
 #figure-3 {
   order: 3;
-  background-color: red;
 }
 #figure-4 {
   order: 4;
@@ -134,5 +131,5 @@ body {
   order: 8;
 }
 #figure-9 {
- order: 9;
+  order: 9;
 }
